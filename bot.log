@@ -1,0 +1,113 @@
+2025-09-17 20:48:48,158 - __main__ - INFO - === 阿里云余额监控机器人启动 ===
+2025-09-17 20:48:48,159 - __main__ - INFO - 模式: Polling
+2025-09-17 20:48:48,159 - __main__ - INFO - 管理员ID: [8447225682]
+2025-09-17 20:48:48,160 - __main__ - INFO - 检查间隔: 300秒
+2025-09-17 20:48:48,201 - __main__ - INFO - 数据库初始化完成
+2025-09-17 20:48:48,202 - aliyun_client - INFO - 阿里云客户端初始化成功
+2025-09-17 20:48:50,120 - __main__ - INFO - 命令处理器注册完成
+2025-09-17 20:48:50,121 - __main__ - INFO - 机器人初始化完成
+2025-09-17 20:48:50,121 - monitor - INFO - 余额监控已启动
+2025-09-17 20:48:50,121 - __main__ - INFO - 自动监控已启动
+2025-09-17 20:48:50,122 - __main__ - INFO - 启动轮询模式
+2025-09-17 20:48:52,055 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8028601790:AAHtbKxuKCMvS5uRUq7e6lj-1_P1sk0Sln4/deleteWebhook "HTTP/1.1 200 OK"
+2025-09-17 20:48:52,409 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8028601790:AAHtbKxuKCMvS5uRUq7e6lj-1_P1sk0Sln4/getMe "HTTP/1.1 200 OK"
+2025-09-17 20:48:52,771 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8028601790:AAHtbKxuKCMvS5uRUq7e6lj-1_P1sk0Sln4/deleteWebhook "HTTP/1.1 200 OK"
+2025-09-17 20:48:52,772 - apscheduler.scheduler - INFO - Scheduler started
+2025-09-17 20:48:52,773 - telegram.ext.Application - INFO - Application started
+2025-09-17 20:48:53,878 - __main__ - INFO - 收到信号 2，正在关闭...
+2025-09-17 20:48:53,878 - __main__ - INFO - 正在停止机器人...
+2025-09-17 20:48:53,879 - monitor - INFO - 余额监控已停止
+2025-09-17 20:48:53,879 - __main__ - INFO - 监控已停止
+2025-09-17 20:48:54,228 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8028601790:AAHtbKxuKCMvS5uRUq7e6lj-1_P1sk0Sln4/deleteWebhook "HTTP/1.1 200 OK"
+2025-09-17 20:48:54,229 - __main__ - INFO - Webhook已删除
+2025-09-17 20:48:54,229 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-09-17 20:48:54,229 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-09-17 20:48:54,230 - telegram.ext.Application - INFO - Application.stop() complete
+2025-09-17 20:48:54,231 - __main__ - INFO - Telegram应用已停止
+2025-09-17 20:48:54,231 - __main__ - INFO - 机器人已停止
+2025-09-17 20:48:54,875 - telegram.ext.Updater - ERROR - Error while calling `get_updates` one more time to mark all fetched updates as read: %s. Suppressing error to ensure graceful shutdown. When polling for updates is restarted, updates may be fetched again. Please adjust timeouts via `ApplicationBuilder` or the parameter `get_updates_request` of `Bot`.
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\httpcore\_async\connection_pool.py", line 232, in handle_async_request
+    connection = await pool_request.wait_for_connection(timeout=timeout)
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\httpcore\_async\connection_pool.py", line 35, in wait_for_connection
+    await self._connection_acquired.wait(timeout=timeout)
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\httpcore\_synchronization.py", line 151, in wait
+    await self._anyio_event.wait()
+  File "D:\Anaconda\envs\python3.9\lib\contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.PoolTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "D:\Anaconda\envs\python3.9\lib\contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.PoolTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\telegram\ext\_updater.py", line 433, in _get_updates_cleanup
+    await self.bot.get_updates(
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+  File "D:\Anaconda\envs\python3.9\lib\site-packages\telegram\request\_httpxrequest.py", line 278, in do_request
+    raise TimedOut(
+telegram.error.TimedOut: Pool timeout: All connections in the connection pool are occupied. Request was *not* sent to Telegram. Consider adjusting the connection pool size or the pool timeout.
+2025-09-17 20:48:54,889 - __main__ - ERROR - 启动轮询失败: Cannot close a running event loop
+2025-09-17 20:48:54,890 - __main__ - ERROR - 启动机器人失败: Cannot close a running event loop
+2025-09-17 20:48:54,890 - __main__ - ERROR - 机器人启动失败
+2025-09-17 20:48:59,929 - __main__ - INFO - 收到信号 2，正在关闭...
+2025-09-17 20:48:59,932 - asyncio - ERROR - Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\python3.9\lib\asyncio\proactor_events.py", line 778, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "D:\Anaconda\envs\python3.9\lib\asyncio\windows_events.py", line 450, in recv
+    self._register_with_iocp(conn)
+  File "D:\Anaconda\envs\python3.9\lib\asyncio\windows_events.py", line 722, in _register_with_iocp
+    self._registered.add(obj)
+  File "D:\Anaconda\envs\python3.9\lib\_weakrefset.py", line 89, in add
+    self.data.add(ref(item, self._remove))
+TypeError: cannot create weak reference to 'NoneType' object
+2025-09-17 20:48:59,941 - alibabacloud_credentials.provider.refreshable - DEBUG - Shutting down executor...
