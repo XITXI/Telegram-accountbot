@@ -1,0 +1,32 @@
+[Unit]
+Description=Aliyun Balance Monitor Telegram Bot
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=botuser
+Group=botuser
+WorkingDirectory=/opt/aliyun-balance-bot
+Environment=PATH=/opt/aliyun-balance-bot/venv/bin
+ExecStart=/opt/aliyun-balance-bot/venv/bin/python main.py
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=aliyun-balance-bot
+
+# 安全设置
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/aliyun-balance-bot
+
+# 资源限制
+LimitNOFILE=65536
+MemoryMax=512M
+
+[Install]
+WantedBy=multi-user.target
